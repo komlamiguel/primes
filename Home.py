@@ -9,6 +9,6 @@ st.title(":snake: Primes Visualizer App :abacus:", text_alignment="left")
 
 st.write_stream(stream_page_guide_text("home"))
 
-st.page_link("pages/1 Sieve.py", label="**Prime Sieves**", icon="🧮")
-st.page_link("pages/2 Primes.py", label="**Prime Tables**", icon="🧱")
-st.page_link("pages/Charts.py", label="**Prime Charts**", icon="📊")
+st.page_link("pages/1 Sieve.py", label="**Prime Sieve**", icon="🧮")
+st.page_link("pages/2 Prime Endings.py", label="**Prime Endings**", icon="🧱")
+st.page_link("pages/Charts.py", label="**Prime Endings Charts**", icon="📊")
