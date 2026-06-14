@@ -8,12 +8,18 @@ import pandas as pd
 from sympy import isprime, primerange
 from primes import *
 import re
-from numpy.random import default_rng as rng
+from utils import *
+
 
 
 st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Amawzing Primator App v 1.1.2, 2026 copyright"})
 
-st.title("Prime Charts :bar_chart:")
+st.header("Prime Charts :bar_chart:")
+
+st.write_stream(stream_page_guide_text("charts"))
+
+st.divider()
+
 
 number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=10000, step=200, value=500)
 
@@ -97,8 +103,10 @@ chart4 = (
 )
 
 
+
 st.altair_chart(chart0)
 st.altair_chart(chart1)
 st.altair_chart(chart2)
 st.altair_chart(chart3)
 st.altair_chart(chart4)
+

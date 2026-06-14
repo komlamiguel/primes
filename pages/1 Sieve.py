@@ -10,10 +10,16 @@ import numpy as np
 import pandas as pd
 from sympy import isprime, primerange
 from primes import *
+from utils import *
 
 st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Amawzing Primator App v 1.1.2, 2026 copyright"})
 
-st.title("Primes Sieves :abacus:")
+st.header("Primes Sieves :abacus:")
+
+st.write_stream(stream_page_guide_text("sieve"))
+
+st.divider()
+
 
 hide_numbers_text = st.sidebar.toggle("Hide numbers", help="Toggle on or off numbers display")
 

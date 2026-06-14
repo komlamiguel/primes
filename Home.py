@@ -5,23 +5,20 @@ st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", ini
 st.image("https://docs.sympy.org/latest/_images/sympy.svg", width=200)
 st.title(":snake: Amazing Primes App :abacus:", text_alignment="left")
 
-# sieves = st.Page(
-#     "tables_sieve.py", title="Sieves Tables", icon=":material/dashboard:", default=True
-# )
+sieves = st.Page(
+    "1 Sieve.py", title="Prime Sieves", icon=":abacus:", default=True
+)
 
-# primes = st.Page(
-#     "tables_primes.py", title="Prime Tables", icon=":material/dashboard:"
-# )
+primes = st.Page(
+    "2 Primes.py", title="Prime Tables", icon=":bricks:"
+)
 
-# charts = st.Page(
-#     "charts.py", title="Prime Charts", icon=":material/notification_important:"
-# )
-
-# pg = st.navigation([sieves, primes, charts])
-
-# pg.run()
+charts = st.Page(
+    "Charts.py", title="Prime Charts", icon=":bar_chart:"
+)
 
 
-# st.page_link("pages/1 Sieve.py", label="**Prime Tables**", icon="🧮")
-# st.page_link("pages/2 Primes.py", label="**Prime Stats**", icon="📈")
-# st.page_link("pages/charts.py", label="**Prime Charts**", icon="📊")
+
+st.page_link("pages/1 Sieve.py", label="**Prime Sieves**", icon="🧮")
+st.page_link("pages/2 Primes.py", label="**Prime Tables**", icon="🧱")
+st.page_link("pages/Charts.py", label="**Prime Charts**", icon="📊")

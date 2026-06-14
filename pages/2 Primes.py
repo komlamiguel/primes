@@ -9,6 +9,7 @@ import pandas as pd
 from sympy import isprime, primerange
 from primes import *
 import re
+from utils import *
 
 NUMBER_REGEX = re.compile(r"[0-9]+")
 
@@ -21,7 +22,11 @@ ENDING_IN_STYLE_FUNCTIONS = {
 
 st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Amawzing Primator App v 1.1.2, 2026 copyright"})
 
-st.title("Primes Ending in 1, 3, 7 or 9 :abacus:")
+st.header("Primes Ending in 1, 3, 7 or 9 :abacus:")
+
+st.write_stream(stream_page_guide_text("primes"))
+
+st.divider()
 
 hide_numbers_text = st.sidebar.toggle("Hide numbers", help="Toggle on or off prime numbers display")  
 
