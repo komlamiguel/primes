@@ -1,13 +1,4 @@
-# Il Sagit de trouver la decomposition en deux facteurs, donc rectangulaire d'un nombre donne
-# Donc il vaudra mieux pour le moment separer les tables de premiers only sur une autre page
-
-# Tester a petite echelle, corriger fonctions pour permettre un affichage rectangularire quelconque est ce qu'il vaut mieux utiliser number input plutot que slider
-
-# Choix entre LaTex ou Markdown Style selector
-
-# Idee utilisation du stream pour streamer une sequence de premiers qui defilent a l'ecran peut etre
-
-# Update st version so that markdown allows coloured text as blue[cool] below
+# Comments
 
 import streamlit as st
 from sympy import isprime, primerange, prime
@@ -55,9 +46,6 @@ def test(columns, rows):
 
 
 
-
-
-
 def get_df_for_sieve(rows, columns, option="naturals"):
 
     n = rows * columns
@@ -94,15 +82,76 @@ def get_df_of_primes(n, columns=20):
 
     return df
 
-        
+def stats_of_primes_endings(n):
+    
+    primes = list(primerange(prime(n + 1)))
+    primes_ending_1 = [prime for prime in primes if prime % 10 == 1]
+    primes_ending_3 = [prime for prime in primes if prime % 10 == 3]
+    primes_ending_7 = [prime for prime in primes if prime % 10 == 7]
+    primes_ending_9 = [prime for prime in primes if prime % 10 == 9]
+
+    n1 = len(primes_ending_1)
+    n3 = len(primes_ending_3)
+    n7 = len(primes_ending_7)
+    n9 = len(primes_ending_9)
+    
+    
+    ending_1_ratio = n1 / n
+    ending_3_ratio = n3 / n
+    ending_7_ratio = n7 / n
+    ending_9_ratio = n9 / n
+
+
+    return {
+        1: {"count": n1, "ratio": ending_1_ratio},
+        3: {"count": n3, "ratio": ending_3_ratio},
+        7: {"count": n7, "ratio": ending_7_ratio},
+        9: {"count": n9, "ratio": ending_9_ratio}
+
+}
+
 def get_list_of_primes(n):
     return [prime(i) for i in range(1, n + 1)]
+
+def get_primes_df_for_chart(n):
+
+    primes = list(primerange(prime(n + 1)))
+
+    data = {"#": list(range(1, n + 1)),
+            "Prime": [prime for prime in primes], 
+            "Desinence": [prime % 10  for prime in primes]
+    }
+
+    df = pd.DataFrame(data)
+
+    return df
+
+
+def get_primes_df_for_chart_new(n):
+
+    primes = list(primerange(prime(n + 1)))
+
+    data = {"#": list(range(1, n + 1)),
+            "Prime": [prime_or_none(i) for i in range(1, n + 1)], 
+            "Desinence": [prime % 10  for prime in primes]
+    }
+
+    df = pd.DataFrame(data)
+
+    return df
+
+    
+
+def prime_or_none(n):
+    return n if isprime(n) else None
 
 
 # Style functions
 def style_prime_in_sieve(x, props=""):
     return props if isprime(x) else None
 
+def style_not_prime_in_sieve(x, props=""):
+    return props if not isprime(x) else None
 
 def style_prime_ending_1(x, props=""):
     return props if x % 10 == 1 else None
@@ -116,20 +165,17 @@ def style_prime_ending_3(x, props=""):
 def style_prime_not_ending_3(x, props=""):
     return props if x % 10 != 3 else None
 
-
 def style_prime_ending_5(x, props=""):
     return props if x % 10 == 5 else None
 
 def style_prime_not_ending_5(x, props=""):
     return props if x % 10 != 5 else None
 
-
 def style_prime_ending_7(x, props=""):
     return props if x % 10 == 7 else None
 
 def style_prime_not_ending_7(x, props=""):
     return props if x % 10 != 7 else None
-
 
 def style_prime_ending_9(x, props=""):
     return props if x % 10 == 9 else None
