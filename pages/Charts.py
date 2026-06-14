@@ -21,7 +21,7 @@ st.write_stream(stream_page_guide_text("charts"))
 st.divider()
 
 
-number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=1000, step=50, value=100)
+number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=1000, step=50, value=200)
 
 
 df = get_primes_below_n_df_for_chart(number_of_primes)

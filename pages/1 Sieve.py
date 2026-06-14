@@ -29,7 +29,10 @@ rows = st.sidebar.number_input('# Rows ', min_value=1, max_value=500, step=10, v
 
 # Text in sidebar should show size of the Sieve being built 
 
-primes_background_colour = st.sidebar.color_picker("Primes Highlight Colour", "#CD853F")
+# primes_background_colour = st.sidebar.color_picker("Primes Highlight Colour", "#CD853F")
+
+primes_background_colour = st.sidebar.color_picker("Primes Highlight Colour", "#A51C30")
+
 primes_text_colour = st.sidebar.color_picker("Primes Text Colour", "#FFF")
 
 width_style = st.sidebar.radio("Table Width Style", ("stretch", "content"))  
