@@ -1,21 +1,21 @@
 import streamlit as st
 
-st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="collapsed", menu_items={"About": "Amawzing Primator App v 1.1.2, 2026 copyright"})
+st.set_page_config(page_title="Primes Visualizer", page_icon=":1234:", layout="wide", initial_sidebar_state="collapsed", menu_items={"About": "Primes Visualizer v1, 2026"})
 
 st.image("https://docs.sympy.org/latest/_images/sympy.svg", width=200)
 st.title(":snake: Amazing Primes App :abacus:", text_alignment="left")
 
-sieves = st.Page(
-    "1 Sieve.py", title="Prime Sieves", icon=":abacus:", default=True
-)
+# sieves = st.Page(
+#     "1 Sieve.py", title="Prime Sieves", icon=":abacus:", default=True
+# )
 
-primes = st.Page(
-    "2 Primes.py", title="Prime Tables", icon=":bricks:"
-)
+# primes = st.Page(
+#     "2 Primes.py", title="Prime Tables", icon=":bricks:"
+# )
 
-charts = st.Page(
-    "Charts.py", title="Prime Charts", icon=":bar_chart:"
-)
+# charts = st.Page(
+#     "Charts.py", title="Prime Charts", icon=":bar_chart:"
+# )
 
 
 
