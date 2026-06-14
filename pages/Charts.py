@@ -21,26 +21,34 @@ st.write_stream(stream_page_guide_text("charts"))
 st.divider()
 
 
-number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=10000, step=200, value=500)
+number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=1000, step=50, value=100)
 
 
-df = get_primes_df_for_chart_new(number_of_primes)
-df1 = df[:125]
-df2 = df[125:250]
-df3 = df[250:375]
-df4 = df[375:]
+df = get_primes_below_n_df_for_chart(number_of_primes)
+# df1 = df[:125]
+# df2 = df[125:250]
+# df3 = df[250:375]
+# df4 = df[375:]
 
-# st.scatter_chart(df_small, x=None, y="Prime", size=100, color="Desinence")
+alpha = number_of_primes // 4
+
+df1 = df[:alpha]
+df2 = df[alpha:2*alpha]
+df3 = df[2*alpha:3*alpha]
+df4 = df[3*alpha:]
+
+
+# st.scatter_chart(df_small, x=None, y="Prime", size=100, color="Ends in")
 
 
 chart0 = (
-    alt.Chart(df, title=f"1st to 500th Prime")
+    alt.Chart(df, title=f"Primes below {number_of_primes}")
     .mark_circle()
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
-            size="Desinence",
-            color=alt.Color('Desinence:Q').legend(None),
-            tooltip=["#", "Prime", "Desinence"]).properties(
+            size="Ends in",
+            color=alt.Color('Ends in:Q').legend(None),
+            tooltip=["Prime", "Ends in"]).properties(
                 width=800,
                 height=600
             )
@@ -49,13 +57,13 @@ chart0 = (
 
 
 chart1 = (
-    alt.Chart(df1, title=f"1st to 125th Prime")
+    alt.Chart(df1, title=f"Primes between 2 and {alpha}")
     .mark_circle()
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
-            size="Desinence",
-            color=alt.Color('Desinence:Q').legend(None),
-            tooltip=["#", "Prime", "Desinence"]).properties(
+            size="Ends in",
+            color=alt.Color('Ends in:Q').legend(None),
+            tooltip=["Prime", "Ends in"]).properties(
                 width=800,
                 height=600
             )
@@ -64,39 +72,39 @@ chart1 = (
 
 
 chart2 = (
-    alt.Chart(df2, title=f"125th to 250th Prime")
+    alt.Chart(df2, title=f"Primes between {alpha} and {2*alpha}")
     .mark_circle()
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
-            size="Desinence",
-            color=alt.Color('Desinence:Q').legend(None),
-            tooltip=["#", "Prime", "Desinence"]).properties(
+            size="Ends in",
+            color=alt.Color('Ends in:Q').legend(None),
+            tooltip=["Prime", "Ends in"]).properties(
                 width=800,
                 height=600
             )
 )
 
 chart3 = (
-    alt.Chart(df3, title=f"250th to 375th Prime")
+    alt.Chart(df3, title=f"Primes between {2*alpha} and {3*alpha}")
     .mark_circle()
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
-            size="Desinence",
-            color=alt.Color('Desinence:Q').legend(None),
-            tooltip=["#", "Prime", "Desinence"]).properties(
+            size="Ends in",
+            color=alt.Color('Ends in:Q').legend(None),
+            tooltip=["Prime", "Ends in"]).properties(
                 width=800,
                 height=600
             )
 )
 
 chart4 = (
-    alt.Chart(df4, title=f"375th to 500th Prime")
+    alt.Chart(df4, title=f"Primes between {3*alpha} and {number_of_primes}")
     .mark_circle()
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
-            size="Desinence",
-            color=alt.Color('Desinence:Q').legend(None),
-            tooltip=["#", "Prime", "Desinence"]).properties(
+            size="Ends in",
+            color=alt.Color('Ends in:Q').legend(None),
+            tooltip=["Prime", "Ends in"]).properties(
                 width=800,
                 height=600
             )

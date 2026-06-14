@@ -119,7 +119,7 @@ def get_primes_df_for_chart(n):
 
     data = {"#": list(range(1, n + 1)),
             "Prime": [prime for prime in primes], 
-            "Desinence": [prime % 10  for prime in primes]
+            "Ends in": [prime % 10  for prime in primes]
     }
 
     df = pd.DataFrame(data)
@@ -127,13 +127,11 @@ def get_primes_df_for_chart(n):
     return df
 
 
-def get_primes_df_for_chart_new(n):
-
-    primes = list(primerange(prime(n + 1)))
+def get_primes_below_n_df_for_chart(n):
 
     data = {"#": list(range(1, n + 1)),
             "Prime": [prime_or_none(i) for i in range(1, n + 1)], 
-            "Desinence": [prime % 10  for prime in primes]
+            "Ends in": [i % 10  for i in range(1, n + 1)]
     }
 
     df = pd.DataFrame(data)
@@ -147,7 +145,7 @@ def get_primes_df_for_heatmap_chart(n):
 
     data = {"#": list(range(1, n + 1)),
             "Prime": [prime_or_none(i) for i in range(1, n + 1)], 
-            "Desinence": [prime % 10  for prime in primes],
+            "Ends in": [prime % 10  for prime in primes],
             "Digits Sum": [get_digits_sum(prime) for prime in primes]
     }
 
@@ -205,8 +203,4 @@ def style_prime_not_ending_9(x, props=""):
     return props if x % 10 != 9 else None
 
 
-def stream_page_guide_text(page):
-    for word in PAGE_GUIDES[page].split(" "):
-        yield word + " "
-        time.sleep(0.02)
         
