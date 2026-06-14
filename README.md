@@ -1,1 +1,1 @@
-[![Streamlit App](https://streamlit.io/images/brand/streamlit-mark-color.png)](https://primesvisualizer.streamlit.app/)
+[![Streamlit App](https://img.shields.io/badge/streamlit-app-blue?logo=streamlit)](https://primesvisualizer.streamlit.app/)
