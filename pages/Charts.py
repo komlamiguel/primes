@@ -16,7 +16,7 @@ st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", ini
 
 st.header("Prime Charts :bar_chart:")
 
-st.write_stream(stream_page_guide_text("charts"))
+st.markdown(PAGE_GUIDES["charts"])
 
 st.divider()
 
