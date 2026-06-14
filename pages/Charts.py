@@ -21,7 +21,8 @@ number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=10000,
 df = get_primes_df_for_chart_new(number_of_primes)
 df1 = df[:125]
 df2 = df[125:250]
-df3 = df[250:]
+df3 = df[250:375]
+df4 = df[375:]
 
 # st.scatter_chart(df_small, x=None, y="Prime", size=100, color="Desinence")
 
@@ -47,7 +48,7 @@ chart1 = (
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
             size="Desinence",
-            color="Desinence",
+            color=alt.Color('Desinence:Q').legend(None),
             tooltip=["#", "Prime", "Desinence"]).properties(
                 width=800,
                 height=600
@@ -62,7 +63,7 @@ chart2 = (
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
             size="Desinence",
-            color="Desinence",
+            color=alt.Color('Desinence:Q').legend(None),
             tooltip=["#", "Prime", "Desinence"]).properties(
                 width=800,
                 height=600
@@ -70,19 +71,34 @@ chart2 = (
 )
 
 chart3 = (
-    alt.Chart(df3, title=f"250th to 500th Prime")
+    alt.Chart(df3, title=f"250th to 375th Prime")
     .mark_circle()
     .encode(alt.X('#:Q').scale(zero=False),
             y="Prime",
             size="Desinence",
-            color="Desinence",
+            color=alt.Color('Desinence:Q').legend(None),
             tooltip=["#", "Prime", "Desinence"]).properties(
                 width=800,
                 height=600
             )
 )
 
+chart4 = (
+    alt.Chart(df4, title=f"375th to 500th Prime")
+    .mark_circle()
+    .encode(alt.X('#:Q').scale(zero=False),
+            y="Prime",
+            size="Desinence",
+            color=alt.Color('Desinence:Q').legend(None),
+            tooltip=["#", "Prime", "Desinence"]).properties(
+                width=800,
+                height=600
+            )
+)
+
+
 st.altair_chart(chart0)
 st.altair_chart(chart1)
 st.altair_chart(chart2)
 st.altair_chart(chart3)
+st.altair_chart(chart4)
