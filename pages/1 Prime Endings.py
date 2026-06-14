@@ -14,7 +14,7 @@ from utils import *
 NUMBER_REGEX = re.compile(r"[0-9]+")
 
 
-st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Primes Visualizer v1 2026"})
+st.set_page_config(page_title="Primes Visualizer - Primes Endings", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Primes Visualizer v1, 2026"})
 
 st.header("Primes Ending in 1, 3, 7 or 9 🧮")
 

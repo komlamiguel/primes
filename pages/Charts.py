@@ -11,8 +11,8 @@ import re
 from utils import *
 
 
+st.set_page_config(page_title="Primes Visualizer - Charts", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Primes Visualizer v1, 2026"})
 
-st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Amawzing Primator App v 1.1.2, 2026 copyright"})
 
 st.header("Prime Charts :bar_chart:")
 
@@ -25,10 +25,6 @@ number_of_primes = st.sidebar.slider('# Primes', min_value=100, max_value=1000, 
 
 
 df = get_primes_below_n_df_for_chart(number_of_primes)
-# df1 = df[:125]
-# df2 = df[125:250]
-# df3 = df[250:375]
-# df4 = df[375:]
 
 alpha = number_of_primes // 4
 

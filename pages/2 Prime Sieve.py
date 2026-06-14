@@ -12,7 +12,7 @@ from sympy import isprime, primerange
 from primes import *
 from utils import *
 
-st.set_page_config(page_title="Primator", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Amawzing Primator App v 1.1.2, 2026 copyright"})
+st.set_page_config(page_title="Primes Visualizer - Prime Sieve", page_icon=":1234:", layout="wide", initial_sidebar_state="expanded", menu_items={"About": "Primes Visualizer v1, 2026"})
 
 st.header("Prime Sieve 🧱")
 
