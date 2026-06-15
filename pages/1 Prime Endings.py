@@ -18,8 +18,8 @@ st.set_page_config(page_title="Primes Visualizer - Primes Endings", page_icon=":
 
 st.header("Primes Ending in 1, 3, 7 or 9 🧮")
 
-st.write(PAGE_GUIDES["primes"] + "*")
-st.caption(f"Visualising side by side endings can help validate **Dr. Kannan Soundararajan**, Stanford University mathematician, *prime conspiracy* discovery.")
+st.write(PAGE_GUIDES["primes"])
+st.caption(f"Visualising side by side endings can help validate **Dr. Kannan Soundararajan**, Stanford University mathematician, *prime conspiracy* discovery. In 2016 Soundararajan together with Lemke discovered that a prime number tends to 'repel' the very next prime from ending in the same digit.")
 
 
 st.divider()
